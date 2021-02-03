@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Split.js Resizeable Split Image Views</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      body{
+      margin:0px;
+      height: 100vh;
+      }
+      .main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+      }
+      .split{
+      width:100%;
+      height: 100%;
+      }
+      .bg-1{
+      background: url(bg-1.jpg);
+      background-attachment: fixed;
+      }
+      .bg-2{
+      background: url(bg-2.jpg);
+      background-attachment: fixed;
+      }
+      .gutter {
+      cursor: e-resize;
+      height: 100%;
+      background: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="split bg-1"></div>
+      <div class="split bg-2"></div>
+    </div>
+    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script>
+      Split(['.bg-1', '.bg-2'], {
+        gutterSize: 8,
+        sizes: [30,70]
+      });
+    </script>
+  </body>
+</html>
